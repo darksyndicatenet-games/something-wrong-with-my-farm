@@ -5,6 +5,10 @@
 [ext_resource type="Texture2D" uid="uid://cibnjn16rq77j" path="res://Assets/PlaceHolders/TigerPhaseOne/frame3.png" id="3_h0o3q"]
 [ext_resource type="Texture2D" uid="uid://6k6kgnxcu0qi" path="res://Assets/PlaceHolders/TigerPhaseOne/frame4.png" id="4_vw2jn"]
 
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_l5ge1"]
+radius = 7.0
+height = 14.0
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_m4yf4"]
 atlas = ExtResource("1_vf15q")
 region = Rect2(0, 0, 32, 32)
@@ -41,18 +45,15 @@ animations = [{
 "speed": 3.0
 }]
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_l5ge1"]
-radius = 5.0
-height = 10.0
-
 [node name="TigerTest" type="CharacterBody2D" unique_id=1814929934]
-
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1018398525]
-position = Vector2(301, 294)
-sprite_frames = SubResource("SpriteFrames_587va")
-animation = &"idle"
-autoplay = "idle"
+y_sort_enabled = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1817737887]
 position = Vector2(301, 293)
 shape = SubResource("CapsuleShape2D_l5ge1")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1018398525]
+position = Vector2(301, 295)
+sprite_frames = SubResource("SpriteFrames_587va")
+animation = &"idle"
+autoplay = "idle"

@@ -4,9 +4,8 @@
 [ext_resource type="TileSet" uid="uid://hw7qy8isdhtg" path="res://Assets/TileMap/game_tile_set.tres" id="1_d2o1l"]
 [ext_resource type="PackedScene" uid="uid://brknv3aidc5ly" path="res://Scenes/player.tscn" id="3_q5s7l"]
 [ext_resource type="Texture2D" uid="uid://cekqr58xfp1yr" path="res://Assets/Mapping/House_1_Wood_Base_Blue.png" id="4_gbc30"]
-[ext_resource type="Script" uid="uid://bsjh4f0m7tex5" path="res://Scenes/spawner_pets.gd" id="5_y7wyq"]
-[ext_resource type="PackedScene" uid="uid://eek78qese6ic" path="res://Scenes/evil_cat_scene.tscn" id="6_y7wyq"]
-[ext_resource type="PackedScene" uid="uid://iwyicmpjbuk" path="res://Scenes/bunny_scene.tscn" id="7_3mf50"]
+[ext_resource type="Script" uid="uid://cj3o7kecq8vnc" path="res://Scenes/PetSpawner.cs" id="5_w8w5l"]
+[ext_resource type="PackedScene" uid="uid://ijo8q6xdmj5p" path="res://Scenes/tigertest.tscn" id="6_do3vt"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_q5s7l"]
 size = Vector2(560, 41.25)
@@ -26,13 +25,35 @@ size = Vector2(223, 25)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3mf50"]
 size = Vector2(96.5, 20)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jaca8"]
+size = Vector2(96.5, 5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3idvi"]
+size = Vector2(96, 3)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_i6tvt"]
+size = Vector2(1, 78)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kdg35"]
+size = Vector2(1.5, 84)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rxk20"]
+size = Vector2(1.5, 82)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wen2c"]
+size = Vector2(1.5, 83)
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4hwee"]
 size = Vector2(62, 49)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_troho"]
 size = Vector2(330, 371)
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_3mf50"]
+radius = 9.0
+
 [node name="GameSceneDefault" type="Node2D" unique_id=1126696108]
+y_sort_enabled = true
 script = ExtResource("1_47pqx")
 
 [node name="GameTileMap" type="Node2D" parent="." unique_id=2071851677]
@@ -46,15 +67,19 @@ tile_map_data = PackedByteArray("AAASABUAAgABAAEAAAASABQAAgABAAEAAAASABMAAgABAAE
 tile_set = ExtResource("1_d2o1l")
 
 [node name="TilledDirt" type="TileMapLayer" parent="GameTileMap" unique_id=1230157902]
-tile_map_data = PackedByteArray("AAADABAAAwACAAIAAAADAA8AAwACAAEAAAADAA4AAwACAAAAAAACABAAAwAAAAIAAAACAA8AAwAAAAEAAAACAA4AAwAAAAAAAAAGABAAAwACAAIAAAAGAA8AAwACAAEAAAAGAA4AAwACAAAAAAAFABAAAwAAAAIAAAAFAA8AAwAAAAEAAAAFAA4AAwAAAAAAAAA=")
+tile_map_data = PackedByteArray("AAADABAAAwABAAIAAAADAA8AAwABAAEAAAADAA4AAwABAAEAAAACABAAAwAAAAIAAAACAA8AAwAAAAEAAAACAA4AAwAAAAEAAAAGABAAAwABAAIAAAAGAA8AAwABAAEAAAAGAA4AAwABAAEAAAAFABAAAwABAAIAAAAFAA8AAwABAAEAAAAFAA4AAwABAAEAAAACAAsAAwAAAAAAAAAHAAsAAwACAAAAAAAHABAAAwACAAIAAAACAAwAAwAAAAEAAAACAA0AAwAAAAEAAAADAAsAAwABAAAAAAAEAAsAAwABAAAAAAAFAAsAAwABAAAAAAAGAAsAAwABAAAAAAAHAAwAAwACAAEAAAAHAA0AAwACAAEAAAAHAA4AAwACAAEAAAAHAA8AAwACAAEAAAAEABAAAwABAAIAAAADAAwAAwABAAEAAAADAA0AAwABAAEAAAAEAAwAAwABAAEAAAAEAA0AAwABAAEAAAAEAA4AAwABAAEAAAAEAA8AAwABAAEAAAAFAAwAAwABAAEAAAAFAA0AAwABAAEAAAAGAAwAAwABAAEAAAAGAA0AAwABAAEAAAA=")
 tile_set = ExtResource("1_d2o1l")
 
 [node name="Nature" type="TileMapLayer" parent="GameTileMap" unique_id=1928478763]
 tile_map_data = PackedByteArray("AAD//xoABAAAAAAAAAAAABoABAAAAAAAAAABABoABAAAAAAAAAACABoABAAAAAAAAAADABoABAAAAAAAAAAEABoABAAAAAAAAAAFABoABAAAAAAAAAAGABoABAAAAAAAAAAHABoABAAAAAAAAAAIABoABAAAAAAAAAAJABoABAAAAAAAAAAKABoABAABAAAAAAALABoABAABAAAAAAAMABoABAABAAAAAAANABoABAABAAAAAAAOABoABAABAAAAAAAPABoABAABAAAAAAAQABoABAABAAAAAAARABoABAABAAAAAAASABoABAABAAAAAAATABoABAAAAAAAAAAUABoABAAAAAAAAAAVABoABAAAAAAAAAAWABoABAABAAAAAAAXABoABAABAAAAAAAYABoABAAAAAAAAAAZABoABAAAAAAAAAAaABoABAAAAAAAAAAbABoABAAAAAAAAAAcABoABAAAAAAAAAAdABoABAAAAAAAAAAeABoABAABAAAAAAAfABoABAABAAAAAAAgABoABAABAAAAAAAhABoABAABAAAAAAAiABoABAABAAAAAAAjABoABAABAAAAAAAkABoABAABAAAAAAAlABoABAABAAAAAAAmABoABAABAAAAAAAnABoABAABAAAAAAAoABoABAABAAAAAAApABoABAABAAAAAAAqABoABAABAAAAAAArABoABAABAAAAAAAsABoABAABAAAAAAA=")
 tile_set = ExtResource("1_d2o1l")
 
+[node name="Fencing" type="TileMapLayer" parent="GameTileMap" unique_id=650429222]
+tile_map_data = PackedByteArray("AAAIAAsABQABAAAAAAAIABAABQABAAIAAAAMABAABQACAAIAAAAQABAABQACAAIAAAAUABAABQADAAIAAAAUAAsABQADAAAAAAAQAAsABQACAAAAAAAMAAsABQACAAAAAAAIAAwABQAAAAEAAAAIAA0ABQAAAAEAAAAIAA4ABQAAAAEAAAAIAA8ABQAAAAEAAAAUAAwABQAAAAEAAAAUAA0ABQAAAAEAAAAUAA4ABQAAAAEAAAAUAA8ABQAAAAEAAAAJAAsABQACAAMAAAAKAAsABQACAAMAAAALAAsABQACAAMAAAANAAsABQACAAMAAAAOAAsABQACAAMAAAAPAAsABQACAAMAAAARAAsABQACAAMAAAASAAsABQACAAMAAAATAAsABQACAAMAAAAJABAABQACAAMAAAAKABAABQACAAMAAAALABAABQACAAMAAAANABAABQACAAMAAAAOABAABQACAAMAAAAPABAABQACAAMAAAARABAABQACAAMAAAASABAABQACAAMAAAATABAABQACAAMAAAAMAAwABQAAAAEAAAAMAA0ABQAAAAEAAAAMAA4ABQAAAAEAAAAMAA8ABQAAAAEAAAAQAAwABQAAAAEAAAAQAA0ABQAAAAEAAAAQAA4ABQAAAAEAAAAQAA8ABQAAAAEAAAA=")
+tile_set = ExtResource("1_d2o1l")
+
 [node name="Player" parent="." unique_id=1922261108 instance=ExtResource("3_q5s7l")]
-position = Vector2(815, 272)
+position = Vector2(397, 323)
 
 [node name="InvisibleBorder" type="Node2D" parent="." unique_id=1753792020]
 
@@ -98,6 +123,30 @@ position = Vector2(211.5, -180)
 rotation = 1.5707964
 shape = SubResource("RectangleShape2D_3mf50")
 
+[node name="FenceCollision" type="CollisionShape2D" parent="InvisibleBorder/StaticBody2D" unique_id=952160831]
+position = Vector2(106.75, -221.5)
+shape = SubResource("RectangleShape2D_jaca8")
+
+[node name="FenceCollision2" type="CollisionShape2D" parent="InvisibleBorder/StaticBody2D" unique_id=424190364]
+position = Vector2(106.5, -142.5)
+shape = SubResource("RectangleShape2D_3idvi")
+
+[node name="FenceCollision3" type="CollisionShape2D" parent="InvisibleBorder/StaticBody2D" unique_id=2108128248]
+position = Vector2(58.5, -183)
+shape = SubResource("RectangleShape2D_i6tvt")
+
+[node name="FenceCollision4" type="CollisionShape2D" parent="InvisibleBorder/StaticBody2D" unique_id=906465887]
+position = Vector2(154.75, -182)
+shape = SubResource("RectangleShape2D_kdg35")
+
+[node name="FenceCollision5" type="CollisionShape2D" parent="InvisibleBorder/StaticBody2D" unique_id=174414413]
+position = Vector2(90.75, -182)
+shape = SubResource("RectangleShape2D_rxk20")
+
+[node name="FenceCollision6" type="CollisionShape2D" parent="InvisibleBorder/StaticBody2D" unique_id=2057325019]
+position = Vector2(122.25, -181.5)
+shape = SubResource("RectangleShape2D_wen2c")
+
 [node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=767001480]
 
 [node name="House1WoodBaseBlue" type="Sprite2D" parent="StaticBody2D" unique_id=611434616]
@@ -108,12 +157,20 @@ texture = ExtResource("4_gbc30")
 position = Vector2(80, 365.5)
 shape = SubResource("RectangleShape2D_4hwee")
 
-[node name="Pets" type="Node2D" parent="." unique_id=1002314019 node_paths=PackedStringArray("AreaSpawn", "SpawnTimer")]
-script = ExtResource("5_y7wyq")
-EvilCatScene = ExtResource("6_y7wyq")
-BunnyScene = ExtResource("7_3mf50")
-AreaSpawn = NodePath("AreaSpawn")
-SpawnTimer = NodePath("SpawnTimer")
+[node name="Pets" type="Node2D" parent="." unique_id=1002314019]
+script = ExtResource("5_w8w5l")
+
+[node name="EvilCat" type="Node2D" parent="Pets" unique_id=2108153716]
+
+[node name="State1" type="Sprite2D" parent="Pets/EvilCat" unique_id=239502136]
+
+[node name="Bunny" type="Node2D" parent="Pets" unique_id=990626067]
+
+[node name="State1" type="Sprite2D" parent="Pets/Bunny" unique_id=1687034709]
+
+[node name="SpawnTimer" type="Timer" parent="Pets" unique_id=651059402]
+wait_time = 60.0
+autostart = true
 
 [node name="AreaSpawn" type="Area2D" parent="Pets" unique_id=655066337]
 
@@ -122,106 +179,18 @@ position = Vector2(845, 214.5)
 shape = SubResource("RectangleShape2D_troho")
 debug_color = Color(0.975746, 0, 0.42063826, 0.41960785)
 
-[node name="SpawnTimer" type="Timer" parent="Pets" unique_id=651059402]
-autostart = true
+[node name="Area2D2" type="Area2D" parent="." unique_id=727730708]
+y_sort_enabled = true
 
-[node name="Placements" type="Node2D" parent="Pets" unique_id=657045119]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D2" unique_id=909361717]
+y_sort_enabled = true
+position = Vector2(301, 292)
+shape = SubResource("CircleShape2D_3mf50")
 
-[node name="Marker2D" type="Marker2D" parent="Pets/Placements" unique_id=1696048228 groups=["spawn_markers"]]
-position = Vector2(700, 51)
+[node name="TigerTest" parent="Area2D2" unique_id=1814929934 instance=ExtResource("6_do3vt")]
 
-[node name="Marker2D2" type="Marker2D" parent="Pets/Placements" unique_id=310873195 groups=["spawn_markers"]]
-position = Vector2(734, 63)
+[node name="TargetMarker" type="Marker2D" parent="." unique_id=1432331973]
+position = Vector2(167, 217)
+gizmo_extents = 13.9
 
-[node name="Marker2D3" type="Marker2D" parent="Pets/Placements" unique_id=1760192125 groups=["spawn_markers"]]
-position = Vector2(767, 51)
-
-[node name="Marker2D4" type="Marker2D" parent="Pets/Placements" unique_id=1748535000 groups=["spawn_markers"]]
-position = Vector2(795, 51)
-
-[node name="Marker2D5" type="Marker2D" parent="Pets/Placements" unique_id=966988295 groups=["spawn_markers"]]
-position = Vector2(731, 154)
-
-[node name="Marker2D6" type="Marker2D" parent="Pets/Placements" unique_id=704434335 groups=["spawn_markers"]]
-position = Vector2(855, 64)
-
-[node name="Marker2D7" type="Marker2D" parent="Pets/Placements" unique_id=754647109 groups=["spawn_markers"]]
-position = Vector2(905, 51)
-
-[node name="Marker2D8" type="Marker2D" parent="Pets/Placements" unique_id=1358891626 groups=["spawn_markers"]]
-position = Vector2(938, 51)
-
-[node name="Marker2D9" type="Marker2D" parent="Pets/Placements" unique_id=716190553 groups=["spawn_markers"]]
-position = Vector2(948, 80)
-
-[node name="Marker2D10" type="Marker2D" parent="Pets/Placements" unique_id=1749087893 groups=["spawn_markers"]]
-position = Vector2(703, 120)
-
-[node name="Marker2D11" type="Marker2D" parent="Pets/Placements" unique_id=942013858 groups=["spawn_markers"]]
-position = Vector2(895, 145)
-
-[node name="Marker2D12" type="Marker2D" parent="Pets/Placements" unique_id=1173360698 groups=["spawn_markers"]]
-position = Vector2(755, 361)
-
-[node name="Marker2D13" type="Marker2D" parent="Pets/Placements" unique_id=492378221 groups=["spawn_markers"]]
-position = Vector2(920, 119)
-
-[node name="Marker2D14" type="Marker2D" parent="Pets/Placements" unique_id=1824553978 groups=["spawn_markers"]]
-position = Vector2(831, 120)
-
-[node name="Marker2D15" type="Marker2D" parent="Pets/Placements" unique_id=1470118009 groups=["spawn_markers"]]
-position = Vector2(854, 370)
-rotation = -1.067766
-
-[node name="Marker2D16" type="Marker2D" parent="Pets/Placements" unique_id=886381753 groups=["spawn_markers"]]
-position = Vector2(896, 319)
-rotation = -1.067766
-
-[node name="Marker2D17" type="Marker2D" parent="Pets/Placements" unique_id=1827118533 groups=["spawn_markers"]]
-position = Vector2(930, 370)
-rotation = -1.067766
-
-[node name="Marker2D18" type="Marker2D" parent="Pets/Placements" unique_id=1715589373 groups=["spawn_markers"]]
-position = Vector2(964, 370)
-rotation = -1.067766
-
-[node name="Marker2D19" type="Marker2D" parent="Pets/Placements" unique_id=422603435 groups=["spawn_markers"]]
-position = Vector2(705, 202)
-
-[node name="Marker2D20" type="Marker2D" parent="Pets/Placements" unique_id=1435646475 groups=["spawn_markers"]]
-position = Vector2(756, 240)
-
-[node name="Marker2D21" type="Marker2D" parent="Pets/Placements" unique_id=1842640282 groups=["spawn_markers"]]
-position = Vector2(715, 251)
-
-[node name="Marker2D22" type="Marker2D" parent="Pets/Placements" unique_id=1586923961 groups=["spawn_markers"]]
-position = Vector2(869, 254)
-
-[node name="Marker2D23" type="Marker2D" parent="Pets/Placements" unique_id=1086581291 groups=["spawn_markers"]]
-position = Vector2(833, 202)
-
-[node name="Marker2D24" type="Marker2D" parent="Pets/Placements" unique_id=1655252692 groups=["spawn_markers"]]
-position = Vector2(867, 202)
-
-[node name="Marker2D25" type="Marker2D" parent="Pets/Placements" unique_id=478362382 groups=["spawn_markers"]]
-position = Vector2(910, 202)
-
-[node name="Marker2D26" type="Marker2D" parent="Pets/Placements" unique_id=284817810 groups=["spawn_markers"]]
-position = Vector2(948, 268)
-
-[node name="Marker2D27" type="Marker2D" parent="Pets/Placements" unique_id=1908884400 groups=["spawn_markers"]]
-position = Vector2(977, 202)
-
-[node name="Marker2D28" type="Marker2D" parent="Pets/Placements" unique_id=715561419 groups=["spawn_markers"]]
-position = Vector2(699, 316)
-
-[node name="Marker2D29" type="Marker2D" parent="Pets/Placements" unique_id=191901007 groups=["spawn_markers"]]
-position = Vector2(781, 139)
-
-[node name="Marker2D30" type="Marker2D" parent="Pets/Placements" unique_id=1113318099 groups=["spawn_markers"]]
-position = Vector2(766, 316)
-
-[node name="Fence" type="Marker2D" parent="Pets" unique_id=1416768198 groups=["pet_spawn"]]
-position = Vector2(173, 210)
-
-[connection signal="timeout" from="Pets/SpawnTimer" to="Pets" method="_on_spawn_timer_timeout"]
+[connection signal="body_entered" from="Area2D2" to="Area2D2" method="_on_body_entered"]
