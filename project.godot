@@ -38,6 +38,12 @@ folder_colors={
 "res://Script/": "red"
 }
 
+[global_group]
+
+spawn_markers=""
+placement=""
+pet_spawn=""
+
 [input]
 
 left={

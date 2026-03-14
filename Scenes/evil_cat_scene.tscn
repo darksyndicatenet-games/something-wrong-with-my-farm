@@ -1,0 +1,24 @@
+[gd_scene format=3 uid="uid://eek78qese6ic"]
+
+[ext_resource type="Texture2D" uid="uid://ccgktx7y2fwa5" path="res://Assets/PlaceHolders/farm_freaks_baby_tiger_guy.png" id="1_imcov"]
+[ext_resource type="Script" uid="uid://cd3ut2nmr3hyu" path="res://Scenes/evil_cat_scene.gd" id="1_tnyyf"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_imcov"]
+
+[node name="EvilCatScene" type="Node2D" unique_id=2133120736]
+script = ExtResource("1_tnyyf")
+PetScene = null
+
+[node name="EvilCat" type="Sprite2D" parent="." unique_id=1411853331]
+position = Vector2(9.536743e-07, -8)
+scale = Vector2(0.024844717, 0.024844717)
+texture = ExtResource("1_imcov")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=19019347]
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Area2D" unique_id=145584290]
+position = Vector2(0, -7)
+shape = SubResource("CircleShape2D_imcov")
+debug_color = Color(0.32683426, 0.61369866, 0.33214247, 0.41960785)
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
