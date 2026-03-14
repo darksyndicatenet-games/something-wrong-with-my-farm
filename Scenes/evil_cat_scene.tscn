@@ -7,7 +7,6 @@
 
 [node name="EvilCatScene" type="Node2D" unique_id=2133120736]
 script = ExtResource("1_tnyyf")
-PetScene = null
 
 [node name="EvilCat" type="Sprite2D" parent="." unique_id=1411853331]
 position = Vector2(9.536743e-07, -8)
