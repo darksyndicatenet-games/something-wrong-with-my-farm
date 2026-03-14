@@ -201,8 +201,8 @@ autoplay = "idle_front"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=752474990]
 y_sort_enabled = true
-position = Vector2(58, 38)
+position = Vector2(0, 3)
 shape = SubResource("CircleShape2D_v0iea")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=571533640]
-zoom = Vector2(4, 4)
+zoom = Vector2(2, 2)
