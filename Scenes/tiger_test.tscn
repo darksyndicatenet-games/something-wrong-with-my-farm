@@ -1,0 +1,58 @@
+[gd_scene format=3 uid="uid://ijo8q6xdmj5p"]
+
+[ext_resource type="Texture2D" uid="uid://cgwujbhb7fn0f" path="res://Assets/PlaceHolders/TigerPhaseOne/frame1.png" id="1_vf15q"]
+[ext_resource type="Texture2D" uid="uid://rmhcf7l6somj" path="res://Assets/PlaceHolders/TigerPhaseOne/frame2.png" id="2_ysh2y"]
+[ext_resource type="Texture2D" uid="uid://cibnjn16rq77j" path="res://Assets/PlaceHolders/TigerPhaseOne/frame3.png" id="3_h0o3q"]
+[ext_resource type="Texture2D" uid="uid://6k6kgnxcu0qi" path="res://Assets/PlaceHolders/TigerPhaseOne/frame4.png" id="4_vw2jn"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_m4yf4"]
+atlas = ExtResource("1_vf15q")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lxdau"]
+atlas = ExtResource("2_ysh2y")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pdid6"]
+atlas = ExtResource("3_h0o3q")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lnrto"]
+atlas = ExtResource("4_vw2jn")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_587va"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_m4yf4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lxdau")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pdid6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lnrto")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 3.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_l5ge1"]
+radius = 5.0
+height = 10.0
+
+[node name="TigerTest" type="CharacterBody2D" unique_id=1814929934]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1018398525]
+position = Vector2(301, 294)
+sprite_frames = SubResource("SpriteFrames_587va")
+animation = &"idle"
+autoplay = "idle"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1817737887]
+position = Vector2(301, 293)
+shape = SubResource("CapsuleShape2D_l5ge1")
