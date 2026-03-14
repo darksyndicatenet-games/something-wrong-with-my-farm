@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://rmhcf7l6somj"
-path="res://.godot/imported/frame2.png-bf87aac5ef25e94078eeddd5b5920ebb.ctex"
+uid="uid://don4tm73bpk53"
+path="res://.godot/imported/ultimate_bunny1.png-8380ad0ee96ddad727ea4cbcb6c9af8c.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/PlaceHolders/TigerPhaseOne/frame2.png"
-dest_files=["res://.godot/imported/frame2.png-bf87aac5ef25e94078eeddd5b5920ebb.ctex"]
+source_file="res://Assets/PlaceHolders/Bunny/PhaseThree/ultimate_bunny1.png"
+dest_files=["res://.godot/imported/ultimate_bunny1.png-8380ad0ee96ddad727ea4cbcb6c9af8c.ctex"]
 
 [params]
 

@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://6k6kgnxcu0qi"
-path="res://.godot/imported/frame4.png-c72ab379ee6c703b555572a3f32f352e.ctex"
+path="res://.godot/imported/frame4.png-f32af1048515a7d74af8d07c71f7b9b1.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/PlaceHolders/TigerPhaseOne/frame4.png"
-dest_files=["res://.godot/imported/frame4.png-c72ab379ee6c703b555572a3f32f352e.ctex"]
+source_file="res://Assets/PlaceHolders/Tiger/TigerPhaseOne/frame4.png"
+dest_files=["res://.godot/imported/frame4.png-f32af1048515a7d74af8d07c71f7b9b1.ctex"]
 
 [params]
 

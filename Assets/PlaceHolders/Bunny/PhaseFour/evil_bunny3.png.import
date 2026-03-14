@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cgwujbhb7fn0f"
-path="res://.godot/imported/frame1.png-bc0992327e1b0310a07705530aa32422.ctex"
+uid="uid://b3q17j555brlo"
+path="res://.godot/imported/evil_bunny3.png-7aa9e37878eed4f3e63a485faee95ac3.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/PlaceHolders/TigerPhaseOne/frame1.png"
-dest_files=["res://.godot/imported/frame1.png-bc0992327e1b0310a07705530aa32422.ctex"]
+source_file="res://Assets/PlaceHolders/Bunny/PhaseFour/evil_bunny3.png"
+dest_files=["res://.godot/imported/evil_bunny3.png-7aa9e37878eed4f3e63a485faee95ac3.ctex"]
 
 [params]
 
