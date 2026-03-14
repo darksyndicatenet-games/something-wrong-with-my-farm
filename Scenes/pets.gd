@@ -7,12 +7,13 @@ extends Node2D
 
 var rng = RandomNumberGenerator.new()
 
-@onready var fence: Marker2D = $Fence
+#@onready var : Marker2D = $Fence
+@onready var fence: Marker2D = $"../TargetMarker"
 
 
 func _ready():
 	SpawnTimer.timeout.connect(_on_spawn_timer_timeout)
-	#fence.pet_spawned.connect(_on_pet_spawned)
+	
 
 func _on_spawn_timer_timeout():
 	# Pick a random marker from the group "spawn_markers"

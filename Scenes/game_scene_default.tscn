@@ -7,6 +7,7 @@
 [ext_resource type="Script" uid="uid://c1xkhoqa6uund" path="res://Scenes/pets.gd" id="5_w8w5l"]
 [ext_resource type="PackedScene" uid="uid://eek78qese6ic" path="res://Scenes/evil_cat_scene.tscn" id="6_y7wyq"]
 [ext_resource type="PackedScene" uid="uid://iwyicmpjbuk" path="res://Scenes/bunny_scene.tscn" id="7_3mf50"]
+[ext_resource type="PackedScene" uid="uid://ut6dcu5t6tbx" path="res://Scenes/tiger.tscn" id="8_3mf50"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_q5s7l"]
 size = Vector2(560, 41.25)
@@ -80,7 +81,7 @@ tile_map_data = PackedByteArray("AAAIAAsABQABAAAAAAAIABAABQABAAIAAAAMABAABQACAAI
 tile_set = ExtResource("1_d2o1l")
 
 [node name="Player" parent="." unique_id=1922261108 instance=ExtResource("3_q5s7l")]
-position = Vector2(397, 323)
+position = Vector2(163, 289)
 
 [node name="InvisibleBorder" type="Node2D" parent="." unique_id=1753792020]
 
@@ -209,9 +210,13 @@ y_sort_enabled = true
 position = Vector2(301, 292)
 shape = SubResource("CircleShape2D_3mf50")
 
-[node name="TargetMarker" type="Marker2D" parent="." unique_id=1432331973]
+[node name="TargetMarker" type="Marker2D" parent="." unique_id=1432331973 groups=["pet_spawn"]]
 position = Vector2(167, 217)
 gizmo_extents = 13.9
 
+[node name="Pen" type="Node2D" parent="." unique_id=959223368]
+
+[node name="Tiger" parent="Pen" unique_id=1878480984 instance=ExtResource("8_3mf50")]
+position = Vector2(166, 223)
+
 [connection signal="timeout" from="Pets/SpawnTimer" to="Pets" method="_on_spawn_timer_timeout"]
-[connection signal="body_entered" from="Area2D2" to="Area2D2" method="_on_body_entered"]
