@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://cvlhvstx0ktxv"]
+
+[ext_resource type="Script" uid="uid://cbrkxwi4a2yyu" path="res://character_body_2d.gd" id="1_0e48y"]
+[ext_resource type="Texture2D" uid="uid://ydcaoep01fyt" path="res://Assets/PlaceHolders/Clock_enemy.png" id="2_epypp"]
+
+[node name="Node2D" type="Node2D" unique_id=995700195]
+metadata/Evolve = false
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="." unique_id=704888107]
+script = ExtResource("1_0e48y")
+
+[node name="Sprite2D" type="Sprite2D" parent="CharacterBody2D" unique_id=150037689]
+position = Vector2(305, 329)
+scale = Vector2(0.36038396, 0.33938813)
+texture = ExtResource("2_epypp")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D" unique_id=886827457]

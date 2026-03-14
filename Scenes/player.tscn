@@ -1,5 +1,6 @@
 [gd_scene format=3 uid="uid://brknv3aidc5ly"]
 
+[ext_resource type="Script" path="res://Scenes/player.gd" id="1_cvnsp"]
 [ext_resource type="Texture2D" uid="uid://cac1n1ic0lsln" path="res://Assets/PlaceHolders/clock_enemy_fonal.png" id="2_cvnsp"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_6t5aa"]
@@ -189,9 +190,10 @@ animations = [{
 radius = 4.0
 
 [node name="Player" type="CharacterBody2D" unique_id=1922261108]
+script = ExtResource("1_cvnsp")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1075409875]
-position = Vector2(57.999992, 37)
+position = Vector2(-7.6293945e-06, 2)
 scale = Vector2(0.04160451, 0.045889135)
 sprite_frames = SubResource("SpriteFrames_vgqql")
 animation = &"walking_back"
@@ -201,3 +203,6 @@ autoplay = "idle_front"
 y_sort_enabled = true
 position = Vector2(58, 38)
 shape = SubResource("CircleShape2D_v0iea")
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=571533640]
+zoom = Vector2(4, 4)
