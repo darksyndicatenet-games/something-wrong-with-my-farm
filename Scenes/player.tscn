@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://brknv3aidc5ly"]
 
-[ext_resource type="Script" path="res://Scenes/player.gd" id="1_cvnsp"]
+[ext_resource type="Script" uid="uid://lqc6q2ysq1qy" path="res://Scenes/player.gd" id="1_cvnsp"]
 [ext_resource type="Texture2D" uid="uid://cac1n1ic0lsln" path="res://Assets/PlaceHolders/clock_enemy_fonal.png" id="2_cvnsp"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_6t5aa"]
@@ -201,8 +201,8 @@ autoplay = "idle_front"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=752474990]
 y_sort_enabled = true
-position = Vector2(58, 38)
+position = Vector2(0, 3)
 shape = SubResource("CircleShape2D_v0iea")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=571533640]
-zoom = Vector2(4, 4)
+zoom = Vector2(2, 2)
