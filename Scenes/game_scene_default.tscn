@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://pjr1iusbo7sr" path="res://Scenes/GameSceneDefault.cs" id="1_47pqx"]
 [ext_resource type="TileSet" uid="uid://hw7qy8isdhtg" path="res://Assets/TileMap/game_tile_set.tres" id="1_d2o1l"]
 [ext_resource type="PackedScene" uid="uid://brknv3aidc5ly" path="res://Scenes/player.tscn" id="3_q5s7l"]
+[ext_resource type="Script" uid="uid://lqc6q2ysq1qy" path="res://Scenes/player.gd" id="4_gbc30"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_q5s7l"]
 size = Vector2(759, 83)
@@ -39,3 +40,5 @@ position = Vector2(19, 405)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="InvisibleBorder/StaticBody2D" unique_id=643105237]
 position = Vector2(339.5, -11.5)
 shape = SubResource("RectangleShape2D_q5s7l")
+position = Vector2(182, 294)
+script = ExtResource("4_gbc30")
