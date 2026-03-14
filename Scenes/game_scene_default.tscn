@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://pjr1iusbo7sr" path="res://Scenes/GameSceneDefault.cs" id="1_47pqx"]
 [ext_resource type="TileSet" uid="uid://hw7qy8isdhtg" path="res://Assets/TileMap/game_tile_set.tres" id="1_d2o1l"]
+[ext_resource type="PackedScene" uid="uid://brknv3aidc5ly" path="res://Scenes/player.tscn" id="3_q5s7l"]
 
 [node name="GameSceneDefault" type="Node2D" unique_id=1126696108]
 script = ExtResource("1_47pqx")
@@ -23,6 +24,4 @@ tile_set = ExtResource("1_d2o1l")
 [node name="Nature" type="TileMapLayer" parent="GameTileMap" unique_id=1928478763]
 tile_set = ExtResource("1_d2o1l")
 
-[node name="Player" type="CharacterBody2D" parent="." unique_id=1338697599]
-
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Player" unique_id=188852038]
+[node name="Player" parent="." unique_id=1922261108 instance=ExtResource("3_q5s7l")]
