@@ -4,6 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://j3io0en1lk2" path="res://Assets/Mapping/Tilesets/Grass.png" id="2_28jam"]
 [ext_resource type="Texture2D" uid="uid://3ljrxl8gmrmj" path="res://Assets/Mapping/Tilesets/Tilled_Dirt_Wide.png" id="3_2kkqb"]
 [ext_resource type="Texture2D" uid="uid://bruajko5gpcmg" path="res://Assets/Mapping/Objects/BasicGrassBiomthings1.png" id="4_8578p"]
+[ext_resource type="Texture2D" uid="uid://d334lp6umbfdc" path="res://Assets/Mapping/Tilesets/Fences.png" id="5_20vgu"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_28jam"]
 texture = ExtResource("1_ghr5r")
@@ -478,6 +479,25 @@ texture = ExtResource("4_8578p")
 3:3/0 = 0
 2:3/0 = 0
 
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_4sn04"]
+texture = ExtResource("5_20vgu")
+0:0/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+3:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+2:1/0 = 0
+3:1/0 = 0
+0:2/0 = 0
+1:2/0 = 0
+2:2/0 = 0
+3:2/0 = 0
+0:3/0 = 0
+1:3/0 = 0
+2:3/0 = 0
+3:3/0 = 0
+
 [resource]
 terrain_set_0/mode = 0
 terrain_set_0/terrain_0/name = "Grass Terrain"
@@ -488,3 +508,4 @@ sources/1 = SubResource("TileSetAtlasSource_28jam")
 sources/2 = SubResource("TileSetAtlasSource_2kkqb")
 sources/3 = SubResource("TileSetAtlasSource_8578p")
 sources/4 = SubResource("TileSetAtlasSource_20vgu")
+sources/6 = SubResource("TileSetAtlasSource_4sn04")
