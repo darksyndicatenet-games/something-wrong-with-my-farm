@@ -12,26 +12,24 @@ public partial class PetSpawner : Node2D
 
 	public override void _Ready()
 	{
-		SpawnTimer.Timeout += SpawnPet;
+		// Connect the timer signal
+		SpawnTimer.Timeout += OnSpawnTimerTimeout;
+		SpawnTimer.Start(); // Make sure the timer is running
 	}
 
-	private void SpawnPet()
+	private void OnSpawnTimerTimeout()
 	{
-		HideAll();
+		// Hide both pets first
+		EvilCat.Visible = false;
+		Bunny.Visible = false;
 
+		// Randomly pick one pet
 		Node2D pet = random.Next(2) == 0 ? EvilCat : Bunny;
 
+		// Place it randomly inside the AreaSpawn
 		pet.GlobalPosition = GetRandomPointInArea();
 
-		int state = random.Next(3);
-
-		for (int i = 0; i < pet.GetChildCount(); i++)
-		{
-			pet.GetChild<Sprite2D>(i).Visible = false;
-		}
-
-		pet.GetChild<Sprite2D>(state).Visible = true;
-
+		// Show the selected pet
 		pet.Visible = true;
 	}
 
@@ -46,11 +44,5 @@ public partial class PetSpawner : Node2D
 		float y = (float)(random.NextDouble() * rect.Size.Y - extents.Y);
 
 		return AreaSpawn.GlobalPosition + new Vector2(x, y);
-	}
-
-	private void HideAll()
-	{
-		EvilCat.Visible = false;
-		Bunny.Visible = false;
 	}
 }

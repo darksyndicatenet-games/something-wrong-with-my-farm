@@ -164,17 +164,9 @@ script = ExtResource("5_w8w5l")
 
 [node name="State1" type="Sprite2D" parent="Pets/EvilCat" unique_id=239502136]
 
-[node name="State2" type="Sprite2D" parent="Pets/EvilCat" unique_id=240758452]
-
-[node name="State3" type="Sprite2D" parent="Pets/EvilCat" unique_id=173115436]
-
 [node name="Bunny" type="Node2D" parent="Pets" unique_id=990626067]
 
 [node name="State1" type="Sprite2D" parent="Pets/Bunny" unique_id=1687034709]
-
-[node name="State2" type="Sprite2D" parent="Pets/Bunny" unique_id=387406262]
-
-[node name="State3" type="Sprite2D" parent="Pets/Bunny" unique_id=880374085]
 
 [node name="SpawnTimer" type="Timer" parent="Pets" unique_id=651059402]
 wait_time = 60.0
