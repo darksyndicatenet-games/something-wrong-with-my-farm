@@ -11,9 +11,20 @@ config_version=5
 [application]
 
 config/name="something_wrong_with_my_farm"
-run/main_scene="uid://dkqgqwjlfif6h"
-config/features=PackedStringArray("4.6", "Forward Plus")
+run/main_scene="uid://b0620dm10isa1"
+config/features=PackedStringArray("4.6", "C#", "Forward Plus")
 config/icon="res://icon.svg"
+
+[display]
+
+window/size/viewport_width=640
+window/size/viewport_height=360
+window/size/mode=4
+window/size/window_width_override=1280
+window/size/window_height_override=720
+window/stretch/mode="viewport"
+window/stretch/aspect="keep_height"
+window/stretch/scale_mode="integer"
 
 [dotnet]
 
@@ -49,4 +60,5 @@ click={
 
 [rendering]
 
+textures/canvas_textures/default_texture_filter=0
 rendering_device/driver.windows="d3d12"
