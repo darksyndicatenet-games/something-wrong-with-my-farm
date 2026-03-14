@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bruajko5gpcmg"
-path="res://.godot/imported/Basic Grass Biom things 1.png-a0462c5428034bac0beb7df946baf2fc.ctex"
+path="res://.godot/imported/BasicGrassBiomthings1.png-83ee3d277a891e711f684078d7d7d344.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/game/Objects/Basic Grass Biom things 1.png"
-dest_files=["res://.godot/imported/Basic Grass Biom things 1.png-a0462c5428034bac0beb7df946baf2fc.ctex"]
+source_file="res://Assets/game/Objects/BasicGrassBiomthings1.png"
+dest_files=["res://.godot/imported/BasicGrassBiomthings1.png-83ee3d277a891e711f684078d7d7d344.ctex"]
 
 [params]
 
