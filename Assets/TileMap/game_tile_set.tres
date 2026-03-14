@@ -1,6 +1,5 @@
 [gd_resource type="TileSet" format=3 uid="uid://hw7qy8isdhtg"]
 
-[ext_resource type="Texture2D" uid="uid://cycrn334t2wtr" path="res://Assets/Mapping/Tilesets/Wooden House.png" id="1_20vgu"]
 [ext_resource type="Texture2D" uid="uid://ca6m6eia5ilw2" path="res://Assets/Mapping/Tilesets/Water.png" id="1_ghr5r"]
 [ext_resource type="Texture2D" uid="uid://j3io0en1lk2" path="res://Assets/Mapping/Tilesets/Grass.png" id="2_28jam"]
 [ext_resource type="Texture2D" uid="uid://3ljrxl8gmrmj" path="res://Assets/Mapping/Tilesets/Tilled_Dirt_Wide.png" id="3_2kkqb"]
@@ -481,7 +480,7 @@ texture = ExtResource("4_8578p")
 2:3/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_4sn04"]
-texture = ExtResource("1_20vgu")
+texture = ExtResource("5_20vgu")
 0:1/0 = 0
 1:1/0 = 0
 2:1/0 = 0
@@ -507,22 +506,11 @@ texture = ExtResource("1_20vgu")
 4:1/0 = 0
 5:2/0 = 0
 1:0/0 = 0
-texture = ExtResource("5_20vgu")
 0:0/0 = 0
-1:0/0 = 0
 2:0/0 = 0
 3:0/0 = 0
-0:1/0 = 0
-1:1/0 = 0
-2:1/0 = 0
 3:1/0 = 0
-0:2/0 = 0
-1:2/0 = 0
-2:2/0 = 0
 3:2/0 = 0
-0:3/0 = 0
-1:3/0 = 0
-2:3/0 = 0
 3:3/0 = 0
 
 [resource]

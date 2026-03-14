@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://brknv3aidc5ly"]
 
-[ext_resource type="Script" path="res://Scenes/player.gd" id="1_cvnsp"]
+[ext_resource type="Script" uid="uid://lqc6q2ysq1qy" path="res://Scenes/player.gd" id="1_cvnsp"]
 [ext_resource type="Texture2D" uid="uid://cac1n1ic0lsln" path="res://Assets/PlaceHolders/clock_enemy_fonal.png" id="2_cvnsp"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_6t5aa"]
