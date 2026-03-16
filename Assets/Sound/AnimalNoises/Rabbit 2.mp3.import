@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://dqe8eurt0ud4"
+path="res://.godot/imported/Rabbit 2.mp3-10b9e6759ffaf5f59d13617d8881dbb7.mp3str"
+
+[deps]
+
+source_file="res://Assets/Sound/AnimalNoises/Rabbit 2.mp3"
+dest_files=["res://.godot/imported/Rabbit 2.mp3-10b9e6759ffaf5f59d13617d8881dbb7.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

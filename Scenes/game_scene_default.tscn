@@ -4,7 +4,7 @@
 [ext_resource type="TileSet" uid="uid://hw7qy8isdhtg" path="res://Assets/TileMap/game_tile_set.tres" id="1_d2o1l"]
 [ext_resource type="PackedScene" uid="uid://brknv3aidc5ly" path="res://Scenes/player.tscn" id="3_q5s7l"]
 [ext_resource type="Texture2D" uid="uid://cekqr58xfp1yr" path="res://Assets/Mapping/House_1_Wood_Base_Blue.png" id="4_gbc30"]
-[ext_resource type="Script" uid="uid://cj3o7kecq8vnc" path="res://Scenes/PetSpawner.cs" id="5_w8w5l"]
+[ext_resource type="Script" path="res://Scenes/PetSpawner.cs" id="5_w8w5l"]
 [ext_resource type="PackedScene" uid="uid://ijo8q6xdmj5p" path="res://Scenes/tigertest.tscn" id="6_do3vt"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_q5s7l"]

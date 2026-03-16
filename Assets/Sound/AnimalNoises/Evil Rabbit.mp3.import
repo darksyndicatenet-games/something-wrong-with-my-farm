@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://ctkm2vbj5tm7w"
+path="res://.godot/imported/Evil Rabbit.mp3-abea1ff7ab1505eccc4691e9b5e5b452.mp3str"
+
+[deps]
+
+source_file="res://Assets/Sound/AnimalNoises/Evil Rabbit.mp3"
+dest_files=["res://.godot/imported/Evil Rabbit.mp3-abea1ff7ab1505eccc4691e9b5e5b452.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

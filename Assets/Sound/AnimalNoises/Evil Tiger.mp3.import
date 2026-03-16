@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://ctomqwyfbsiwn"
+path="res://.godot/imported/Evil Tiger.mp3-63d9e54f617b2be7a093547a400f3a32.mp3str"
+
+[deps]
+
+source_file="res://Assets/Sound/AnimalNoises/Evil Tiger.mp3"
+dest_files=["res://.godot/imported/Evil Tiger.mp3-63d9e54f617b2be7a093547a400f3a32.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
