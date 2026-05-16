@@ -3,8 +3,19 @@
 [ext_resource type="Script" uid="uid://ctvcur8nn27y0" path="res://NewScenes/bunny_scene.gd" id="1_momgy"]
 [ext_resource type="Texture2D" uid="uid://dj8itp7h6soi1" path="res://Bunny/PhaseOne/bunny1.png" id="1_uvnu8"]
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_momgy"]
+radius = 8.0
+
 [node name="BunnyScene" type="Node2D" unique_id=1355326536]
 script = ExtResource("1_momgy")
 
+[node name="StaticBody2D" type="Area2D" parent="." unique_id=1574751178]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=1385632532]
+shape = SubResource("CircleShape2D_momgy")
+debug_color = Color(0.95589393, 1.8289685e-06, 0.5433753, 0.41960785)
+
 [node name="Bunny" type="Sprite2D" parent="." unique_id=244168745]
 texture = ExtResource("1_uvnu8")
+
+[connection signal="body_entered" from="StaticBody2D" to="." method="_on_static_body_2d_body_entered"]
