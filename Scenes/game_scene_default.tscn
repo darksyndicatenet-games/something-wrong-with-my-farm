@@ -9,16 +9,29 @@
 [ext_resource type="Texture2D" uid="uid://dyw6ou7rc6yq3" path="res://Bunny/Detailed.png" id="5_3idvi"]
 [ext_resource type="PackedScene" uid="uid://bsmpfov21iboy" path="res://NewScenes/tiger_scene.tscn" id="5_i6tvt"]
 [ext_resource type="AudioStream" uid="uid://ctkm2vbj5tm7w" path="res://Music/AnimalNoises/Evil Rabbit.mp3" id="6_i6tvt"]
+<<<<<<< Updated upstream
 [ext_resource type="PackedScene" uid="uid://ut6dcu5t6tbx" path="res://Scenes/tiger.tscn" id="8_3mf50"]
 [ext_resource type="PackedScene" uid="uid://15p3bmio5pqb" path="res://Scenes/bunny.tscn" id="9_4hwee"]
+=======
+[ext_resource type="PackedScene" uid="uid://eek78qese6ic" path="res://Scenes/evil_cat_scene.tscn" id="6_y7wyq"]
+[ext_resource type="PackedScene" uid="uid://iwyicmpjbuk" path="res://Scenes/bunny_scene.tscn" id="7_3mf50"]
+>>>>>>> Stashed changes
 [ext_resource type="AudioStream" uid="uid://bbss6iin01k8r" path="res://Music/Fantasy Nature Birds.mp3" id="10_jaca8"]
+[ext_resource type="Script" uid="uid://w6tnujo06kvq" path="res://Scenes/pen.gd" id="10_rxk20"]
 [ext_resource type="AudioStream" uid="uid://craegv384ivtt" path="res://Music/Fantasy Nature River.mp3" id="11_3idvi"]
+<<<<<<< Updated upstream
 [ext_resource type="Script" uid="uid://do0rudv7nhak7" path="res://Scenes/target_bunny.gd" id="14_kdg35"]
 [ext_resource type="Script" uid="uid://bs1otipw4q8" path="res://Scenes/pen_new.gd" id="14_wen2c"]
 [ext_resource type="Script" uid="uid://b7bybn6rw5pg3" path="res://Scenes/target_tiger.gd" id="15_rxk20"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kuugm"]
 size = Vector2(0.4456568, 0.6821208)
+=======
+[ext_resource type="Script" uid="uid://dqirmm3bh1b3w" path="res://Scenes/pen_1_collision.gd" id="11_wen2c"]
+[ext_resource type="Script" uid="uid://b7l2mbiiw4ecl" path="res://Scenes/pen_two.gd" id="12_y52lp"]
+[ext_resource type="Script" uid="uid://dilafl4p3abx4" path="res://Scenes/pen_three.gd" id="13_wen2c"]
+[ext_resource type="Script" uid="uid://kw5hdqeensgw" path="res://Scenes/margin_container.gd" id="14_kdg35"]
+>>>>>>> Stashed changes
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_q5s7l"]
 size = Vector2(560, 41.25)
@@ -65,6 +78,17 @@ size = Vector2(100, 119)
 [sub_resource type="CircleShape2D" id="CircleShape2D_3mf50"]
 radius = 9.0
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kuugm"]
+size = Vector2(22.946327, 21.920616)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kiffv"]
+size = Vector2(52, 66.75)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8l11p"]
+size = Vector2(53, 67)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_kdg35"]
+
 [node name="GameSceneDefault" type="Node2D" unique_id=1126696108]
 y_sort_enabled = true
 script = ExtResource("1_i6tvt")
@@ -91,6 +115,7 @@ tile_set = ExtResource("1_d2o1l")
 tile_map_data = PackedByteArray("AAAIAAsABQABAAAAAAAIABAABQABAAIAAAAMABAABQACAAIAAAAQABAABQACAAIAAAAUABAABQADAAIAAAAUAAsABQADAAAAAAAQAAsABQACAAAAAAAMAAsABQACAAAAAAAIAAwABQAAAAEAAAAIAA0ABQAAAAEAAAAIAA4ABQAAAAEAAAAIAA8ABQAAAAEAAAAUAAwABQAAAAEAAAAUAA0ABQAAAAEAAAAUAA4ABQAAAAEAAAAUAA8ABQAAAAEAAAAJAAsABQACAAMAAAAKAAsABQACAAMAAAALAAsABQACAAMAAAANAAsABQACAAMAAAAOAAsABQACAAMAAAAPAAsABQACAAMAAAARAAsABQACAAMAAAASAAsABQACAAMAAAATAAsABQACAAMAAAAJABAABQACAAMAAAAKABAABQACAAMAAAALABAABQACAAMAAAANABAABQACAAMAAAAOABAABQACAAMAAAAPABAABQACAAMAAAARABAABQACAAMAAAASABAABQACAAMAAAATABAABQACAAMAAAAMAAwABQAAAAEAAAAMAA0ABQAAAAEAAAAMAA4ABQAAAAEAAAAMAA8ABQAAAAEAAAAQAAwABQAAAAEAAAAQAA0ABQAAAAEAAAAQAA4ABQAAAAEAAAAQAA8ABQAAAAEAAAA=")
 tile_set = ExtResource("1_d2o1l")
 
+<<<<<<< Updated upstream
 [node name="AreaSpawn" type="Area2D" parent="." unique_id=655066337]
 z_index = 1
 script = ExtResource("2_jaca8")
@@ -103,6 +128,11 @@ shape = SubResource("RectangleShape2D_kuugm")
 
 [node name="Player" parent="." unique_id=1922261108 groups=["player"] instance=ExtResource("3_q5s7l")]
 position = Vector2(167, 300)
+=======
+[node name="Player" parent="." unique_id=1922261108 node_paths=PackedStringArray("info_hud") instance=ExtResource("3_q5s7l")]
+position = Vector2(163, 289)
+info_hud = NodePath("../CanvasLayer/MarginContainer")
+>>>>>>> Stashed changes
 
 [node name="InvisibleBorder" type="Node2D" parent="." unique_id=1753792020]
 
@@ -207,15 +237,43 @@ shape = SubResource("CircleShape2D_3mf50")
 position = Vector2(167, 217)
 gizmo_extents = 13.9
 
+<<<<<<< Updated upstream
 [node name="Pen" type="Node2D" parent="." unique_id=959223368]
 visible = false
 
 [node name="Tiger" parent="Pen" unique_id=1878480984 instance=ExtResource("8_3mf50")]
 visible = false
 position = Vector2(167, 220)
+=======
+[node name="Pen_One" type="Node2D" parent="." unique_id=959223368]
+script = ExtResource("10_rxk20")
 
-[node name="Bunny" parent="Pen" unique_id=1883707916 instance=ExtResource("9_4hwee")]
-position = Vector2(234, 222)
+[node name="Pen1" type="Area2D" parent="Pen_One" unique_id=1967712891]
+>>>>>>> Stashed changes
+
+[node name="Pen1_collision" type="CollisionShape2D" parent="Pen_One/Pen1" unique_id=1274669871]
+position = Vector2(167, 223.00002)
+scale = Vector2(2.4404776, -3.010864)
+shape = SubResource("RectangleShape2D_kuugm")
+script = ExtResource("11_wen2c")
+
+[node name="Pen_Two" type="Node2D" parent="." unique_id=1188366578]
+script = ExtResource("12_y52lp")
+
+[node name="Pen2" type="Area2D" parent="Pen_Two" unique_id=1140723677]
+
+[node name="Pen2_collision" type="CollisionShape2D" parent="Pen_Two/Pen2" unique_id=217206070]
+position = Vector2(231, 223.375)
+shape = SubResource("RectangleShape2D_kiffv")
+
+[node name="Pen_Three" type="Node2D" parent="." unique_id=885621391]
+script = ExtResource("13_wen2c")
+
+[node name="Pen3" type="Area2D" parent="Pen_Three" unique_id=73044887]
+
+[node name="Pen3_collision" type="CollisionShape2D" parent="Pen_Three/Pen3" unique_id=949341936]
+position = Vector2(296.5, 222.5)
+shape = SubResource("RectangleShape2D_8l11p")
 
 [node name="Burds" type="AudioStreamPlayer2D" parent="." unique_id=1413363048]
 stream = ExtResource("10_jaca8")
@@ -225,6 +283,7 @@ autoplay = true
 stream = ExtResource("11_3idvi")
 autoplay = true
 
+<<<<<<< Updated upstream
 [node name="PenNew" type="Node2D" parent="." unique_id=1528172249]
 script = ExtResource("14_wen2c")
 
@@ -249,3 +308,28 @@ position = Vector2(288, 212)
 [node name="Marker2D" type="Marker2D" parent="PenNew" unique_id=1548906589]
 visible = false
 position = Vector2(283, 210)
+=======
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1874835639]
+
+[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer" unique_id=2059136463]
+offset_right = 40.0
+offset_bottom = 40.0
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+script = ExtResource("14_kdg35")
+
+[node name="PanelContainer" type="PanelContainer" parent="CanvasLayer/MarginContainer" unique_id=1538018013]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_kdg35")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="CanvasLayer/MarginContainer/PanelContainer" unique_id=903168474]
+custom_minimum_size = Vector2(250, 100)
+layout_mode = 2
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+bbcode_enabled = true
+scroll_active = false
+
+[connection signal="body_entered" from="StaticBody2D/Area2D" to="Pets" method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="StaticBody2D/Area2D" to="Pets" method="_on_area_2d_body_exited"]
+[connection signal="timeout" from="Pets/SpawnTimer" to="Pets" method="_on_spawn_timer_timeout"]
+>>>>>>> Stashed changes
