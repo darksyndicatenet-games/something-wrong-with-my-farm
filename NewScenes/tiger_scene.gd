@@ -1,8 +1,9 @@
 extends Node2D
 
+
 func _ready() -> void:
 	z_index = 20
-	await get_tree().create_timer(30.0).timeout
+	await get_tree().create_timer(40.0).timeout
 	queue_free()
 	
 func _physics_process(_delta: float) -> void:
