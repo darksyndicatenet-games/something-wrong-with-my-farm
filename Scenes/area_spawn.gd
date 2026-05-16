@@ -16,17 +16,33 @@ func spawn_loop():
 func get_random_point() -> Vector2:
 	var shape = $CollisionShape2D.shape as RectangleShape2D
 	
+	if shape == null:
+		print("Shape is not RectangleShape2D")
+		return global_position
+	
 	var extents = shape.extents
 	
-	var random_x = randf_range(-extents.x, extents.x)
-	var random_y = randf_range(-extents.y, extents.y)
+	var spread := 500  # bigger area
+
+	var random_offset = Vector2(
+		randf_range(-spread, spread),
+		randf_range(-spread, spread)
+	)
 	
-	return global_position + Vector2(random_x, random_y)
+	return $CollisionShape2D.global_position + random_offset
+	
 	
 func spawn_animal():
 	if animal_scene == null:
-		print("NO ANIMAL SCENE ASSIGNED")
+		print("No animal scene")
 		return
+	
 	var animal = animal_scene.instantiate()
+
 	get_tree().current_scene.add_child(animal)
+
 	animal.global_position = get_random_point()
+	animal.z_index = 100
+
+	print("Spawned")
+	print(get_random_point())

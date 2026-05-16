@@ -14,7 +14,7 @@
 [ext_resource type="AudioStream" uid="uid://craegv384ivtt" path="res://Music/Fantasy Nature River.mp3" id="11_3idvi"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kuugm"]
-size = Vector2(0.19017446, 0.21452439)
+size = Vector2(0.4456568, 0.6821208)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_q5s7l"]
 size = Vector2(560, 41.25)
@@ -93,12 +93,12 @@ script = ExtResource("2_jaca8")
 animal_scene = ExtResource("3_3idvi")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AreaSpawn" unique_id=1341369939]
-position = Vector2(714.00006, 368)
+position = Vector2(867.00006, 281)
 scale = Vector2(478.50745, -298.33432)
 shape = SubResource("RectangleShape2D_kuugm")
 
 [node name="Player" parent="." unique_id=1922261108 instance=ExtResource("3_q5s7l")]
-position = Vector2(608, 361)
+position = Vector2(867, 281)
 
 [node name="InvisibleBorder" type="Node2D" parent="." unique_id=1753792020]
 
