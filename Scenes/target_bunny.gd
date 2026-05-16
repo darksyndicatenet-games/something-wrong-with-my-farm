@@ -13,6 +13,7 @@ func _physics_process(_delta: float) -> void:
 	if Globals.bunny_track >= 1 and is_spawn_bunnny == false:
 		spawn_animal()
 		is_spawn_bunnny = true
+		Globals.bunny_spawned = true
 
 func spawn_animal():
 	var animal = bunny_scene.instantiate()

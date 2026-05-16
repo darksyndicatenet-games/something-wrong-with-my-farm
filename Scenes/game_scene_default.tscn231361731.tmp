@@ -17,7 +17,6 @@
 [ext_resource type="Script" uid="uid://bs1otipw4q8" path="res://Scenes/pen_new.gd" id="14_wen2c"]
 [ext_resource type="Script" uid="uid://b7bybn6rw5pg3" path="res://Scenes/target_tiger.gd" id="15_rxk20"]
 [ext_resource type="Script" uid="uid://bbf3pjcarya0l" path="res://Scenes/pens.gd" id="17_y52lp"]
-[ext_resource type="Script" uid="uid://dd6oynae027lj" path="res://Scenes/pen_2.gd" id="18_kiffv"]
 [ext_resource type="PackedScene" uid="uid://jd1rd1sw4yp3" path="res://NewScenes/globals.tscn" id="18_kuugm"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kuugm"]
@@ -70,9 +69,6 @@ radius = 9.0
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kiffv"]
 size = Vector2(59, 105.5)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_8l11p"]
-size = Vector2(57, 103.5)
 
 [node name="GameSceneDefault" type="Node2D" unique_id=1126696108]
 y_sort_enabled = true
@@ -270,17 +266,6 @@ position = Vector2(-1, 16.25)
 shape = SubResource("RectangleShape2D_kiffv")
 debug_color = Color(0.9939515, 0, 0.23683006, 0.41960785)
 
-[node name="Pen2" type="Area2D" parent="PenNew/Pens" unique_id=1900609793]
-position = Vector2(233, 224)
-script = ExtResource("18_kiffv")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="PenNew/Pens/Pen2" unique_id=1651404252]
-position = Vector2(0.5, 14.25)
-shape = SubResource("RectangleShape2D_8l11p")
-debug_color = Color(0.9956885, 0, 0.20891789, 0.41960785)
-
 [node name="Globals" parent="." unique_id=90096379 instance=ExtResource("18_kuugm")]
 
 [connection signal="body_entered" from="PenNew/Pens/Pen1" to="PenNew/Pens" method="_on_pen_1_body_entered"]
-[connection signal="body_entered" from="PenNew/Pens/Pen2" to="PenNew/Pens/Pen2" method="_on_pen_2_body_entered"]
-[connection signal="body_exited" from="PenNew/Pens/Pen2" to="PenNew/Pens/Pen2" method="_on_pen_2_body_exited"]

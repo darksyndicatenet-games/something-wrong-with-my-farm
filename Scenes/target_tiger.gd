@@ -16,6 +16,7 @@ func _physics_process(_delta: float) -> void:
 	if Globals.tiger_track >= 1 and is_spawn_tiger == false:
 		spawn_animal()
 		is_spawn_tiger = true
+		Globals.tiger_spawned = true
 
 func spawn_animal():
 	var animal = tiger_scene.instantiate()

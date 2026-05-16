@@ -1,0 +1,18 @@
+extends Node2D
+
+
+var player_inside = false
+
+func _on_pen_1_body_entered(body: Node2D) -> void:
+	if body.name == "Player":
+		player_inside = true
+
+func _on_pen_1_body_exited(body: Node2D) -> void:
+	if body.name == "Player":
+		player_inside = false
+
+func _process(_delta):
+	if player_inside and Input.is_action_just_pressed("click") and Globals.bunny_phase == 3 and Globals.bunny_spawned == true:
+		Globals.meat += 1
+		print("Meat: ", Globals.meat)
+		Globals.bunny_spawned = false
