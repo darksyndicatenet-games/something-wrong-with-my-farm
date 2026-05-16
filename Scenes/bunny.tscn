@@ -1,0 +1,213 @@
+[gd_scene format=3 uid="uid://15p3bmio5pqb"]
+
+[ext_resource type="Script" uid="uid://rlxnybpfyxbr" path="res://Scenes/bunny.gd" id="1_7qvlp"]
+[ext_resource type="Texture2D" uid="uid://dchea58lrcd56" path="res://Tiger/Tiger.png" id="2_a6d7w"]
+[ext_resource type="Texture2D" uid="uid://bfkiwqailumby" path="res://Bunny/PhaseFour/evil_bunny1.png" id="3_86gfu"]
+[ext_resource type="Texture2D" uid="uid://xjh4f4ya6tdn" path="res://Bunny/PhaseFour/evil_bunny2.png" id="4_a6d7w"]
+[ext_resource type="Texture2D" uid="uid://batvwn4jtfsq2" path="res://Bunny/PhaseFour/evil_bunny3.png" id="5_gpokw"]
+[ext_resource type="Texture2D" uid="uid://cm2y8vfwmwyrn" path="res://Bunny/PhaseFour/evil_bunny4.png" id="6_yxh23"]
+[ext_resource type="Texture2D" uid="uid://dj8itp7h6soi1" path="res://Bunny/PhaseOne/bunny1.png" id="7_86gfu"]
+[ext_resource type="Texture2D" uid="uid://bp1g6q0md01av" path="res://Bunny/PhaseOne/bunny2.png" id="8_a6d7w"]
+[ext_resource type="Texture2D" uid="uid://b2i1fbixel2e2" path="res://Bunny/PhaseOne/bunny3.png" id="9_gpokw"]
+[ext_resource type="Texture2D" uid="uid://bjsr8xm6mvb7x" path="res://Bunny/PhaseOne/bunny4.png" id="10_yxh23"]
+[ext_resource type="Texture2D" uid="uid://dnxfdiyxd0psv" path="res://Bunny/PhaseTwo/grown_up_bunny1.png" id="11_86gfu"]
+[ext_resource type="Texture2D" uid="uid://b0o42e7n5tp6t" path="res://Bunny/PhaseTwo/grown_up_bunny2.png" id="12_a6d7w"]
+[ext_resource type="Texture2D" uid="uid://bwv71tinlhmgc" path="res://Bunny/PhaseTwo/grown_up_bunny3.png" id="13_gpokw"]
+[ext_resource type="Texture2D" uid="uid://d35ld2am4brct" path="res://Bunny/PhaseTwo/grown_up_bunny4.png" id="14_yxh23"]
+[ext_resource type="Texture2D" uid="uid://ctasuw4gk52fk" path="res://Bunny/PhaseThree/ultimate_bunny1.png" id="15_86gfu"]
+[ext_resource type="Texture2D" uid="uid://di7dpnqbjnyji" path="res://Bunny/PhaseThree/ultimate_bunny2.png" id="16_a6d7w"]
+[ext_resource type="Texture2D" uid="uid://bxqp2be2mcmms" path="res://Bunny/PhaseThree/ultimate_bunny3.png" id="17_gpokw"]
+[ext_resource type="AudioStream" uid="uid://dyuho0qu12l66" path="res://Music/AnimalNoises/Rabbit 1.mp3" id="18_86gfu"]
+[ext_resource type="Texture2D" uid="uid://d4fokkokyy6lg" path="res://Bunny/PhaseThree/ultimate_bunny4.png" id="18_yxh23"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_cbnfm"]
+size = Vector2(60, 101)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8to28"]
+atlas = ExtResource("2_a6d7w")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6brrs"]
+atlas = ExtResource("3_86gfu")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vuw2j"]
+atlas = ExtResource("4_a6d7w")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qlmmb"]
+atlas = ExtResource("5_gpokw")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_k643k"]
+atlas = ExtResource("6_yxh23")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_187t7"]
+atlas = ExtResource("7_86gfu")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cbnfm"]
+atlas = ExtResource("8_a6d7w")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yuthm"]
+atlas = ExtResource("9_gpokw")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_86gfu"]
+atlas = ExtResource("10_yxh23")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_a6d7w"]
+atlas = ExtResource("11_86gfu")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gpokw"]
+atlas = ExtResource("12_a6d7w")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yxh23"]
+atlas = ExtResource("13_gpokw")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pt5bg"]
+atlas = ExtResource("14_yxh23")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pelpj"]
+atlas = ExtResource("15_86gfu")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mq81v"]
+atlas = ExtResource("16_a6d7w")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tx4fb"]
+atlas = ExtResource("17_gpokw")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kdkyi"]
+atlas = ExtResource("18_yxh23")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_yuthm"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8to28")
+}],
+"loop": true,
+"name": &"Detailed",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6brrs")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vuw2j")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qlmmb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_k643k")
+}],
+"loop": true,
+"name": &"Failed",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_187t7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cbnfm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yuthm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_86gfu")
+}],
+"loop": true,
+"name": &"Feed1",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_a6d7w")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gpokw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yxh23")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pt5bg")
+}],
+"loop": true,
+"name": &"Feed2",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pelpj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mq81v")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tx4fb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kdkyi")
+}],
+"loop": true,
+"name": &"Feed3",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_86gfu"]
+
+[node name="Bunny" type="CharacterBody2D" unique_id=1883707916]
+script = ExtResource("1_7qvlp")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=329274456]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1534948984]
+position = Vector2(0, 21.5)
+shape = SubResource("RectangleShape2D_cbnfm")
+
+[node name="Feed1" type="AnimatedSprite2D" parent="." unique_id=1594627821]
+sprite_frames = SubResource("SpriteFrames_yuthm")
+animation = &"Feed1"
+autoplay = "Feed1"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1024394754]
+shape = SubResource("CircleShape2D_86gfu")
+
+[node name="Choices" type="Node2D" parent="." unique_id=1547195598]
+
+[node name="btnLeave" type="Button" parent="Choices" unique_id=1445274649]
+offset_left = -106.0
+offset_top = 63.0
+offset_right = -24.0
+offset_bottom = 94.0
+text = "Leave Me"
+
+[node name="btnFeedme" type="Button" parent="Choices" unique_id=897175777]
+offset_left = 30.0
+offset_top = 50.0
+offset_right = 104.0
+offset_bottom = 81.0
+text = "Feed Me"
+
+[node name="SFX" type="AudioStreamPlayer2D" parent="." unique_id=1387475407]
+stream = ExtResource("18_86gfu")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]
+[connection signal="pressed" from="Choices/btnFeedme" to="." method="_on_btn_feedme_pressed"]

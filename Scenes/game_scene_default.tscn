@@ -1,11 +1,18 @@
 [gd_scene format=4 uid="uid://b0620dm10isa1"]
 
-[ext_resource type="Script" uid="uid://pjr1iusbo7sr" path="res://Scenes/GameSceneDefault.cs" id="1_47pqx"]
 [ext_resource type="TileSet" uid="uid://hw7qy8isdhtg" path="res://Assets/TileMap/game_tile_set.tres" id="1_d2o1l"]
+[ext_resource type="Script" uid="uid://jcdfarwtfvlr" path="res://Scenes/game_scene_default.gd" id="1_i6tvt"]
 [ext_resource type="PackedScene" uid="uid://brknv3aidc5ly" path="res://Scenes/player.tscn" id="3_q5s7l"]
 [ext_resource type="Texture2D" uid="uid://cekqr58xfp1yr" path="res://Assets/Mapping/House_1_Wood_Base_Blue.png" id="4_gbc30"]
-[ext_resource type="Script" uid="uid://cj3o7kecq8vnc" path="res://Scenes/PetSpawner.cs" id="5_w8w5l"]
-[ext_resource type="PackedScene" uid="uid://ijo8q6xdmj5p" path="res://Scenes/tigertest.tscn" id="6_do3vt"]
+[ext_resource type="Texture2D" uid="uid://dyw6ou7rc6yq3" path="res://Bunny/Detailed.png" id="5_3idvi"]
+[ext_resource type="Script" uid="uid://c1xkhoqa6uund" path="res://Scenes/pets.gd" id="5_w8w5l"]
+[ext_resource type="AudioStream" uid="uid://ctkm2vbj5tm7w" path="res://Music/AnimalNoises/Evil Rabbit.mp3" id="6_i6tvt"]
+[ext_resource type="PackedScene" uid="uid://eek78qese6ic" path="res://Scenes/evil_cat_scene.tscn" id="6_y7wyq"]
+[ext_resource type="PackedScene" uid="uid://iwyicmpjbuk" path="res://Scenes/bunny_scene.tscn" id="7_3mf50"]
+[ext_resource type="PackedScene" uid="uid://ut6dcu5t6tbx" path="res://Scenes/tiger.tscn" id="8_3mf50"]
+[ext_resource type="PackedScene" uid="uid://15p3bmio5pqb" path="res://Scenes/bunny.tscn" id="9_4hwee"]
+[ext_resource type="AudioStream" uid="uid://bbss6iin01k8r" path="res://Music/Fantasy Nature Birds.mp3" id="10_jaca8"]
+[ext_resource type="AudioStream" uid="uid://craegv384ivtt" path="res://Music/Fantasy Nature River.mp3" id="11_3idvi"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_q5s7l"]
 size = Vector2(560, 41.25)
@@ -44,7 +51,10 @@ size = Vector2(1.5, 82)
 size = Vector2(1.5, 83)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4hwee"]
-size = Vector2(62, 49)
+size = Vector2(35, 27)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_y52lp"]
+size = Vector2(100, 119)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_troho"]
 size = Vector2(330, 371)
@@ -54,7 +64,7 @@ radius = 9.0
 
 [node name="GameSceneDefault" type="Node2D" unique_id=1126696108]
 y_sort_enabled = true
-script = ExtResource("1_47pqx")
+script = ExtResource("1_i6tvt")
 
 [node name="GameTileMap" type="Node2D" parent="." unique_id=2071851677]
 
@@ -79,7 +89,7 @@ tile_map_data = PackedByteArray("AAAIAAsABQABAAAAAAAIABAABQABAAIAAAAMABAABQACAAI
 tile_set = ExtResource("1_d2o1l")
 
 [node name="Player" parent="." unique_id=1922261108 instance=ExtResource("3_q5s7l")]
-position = Vector2(397, 323)
+position = Vector2(163, 289)
 
 [node name="InvisibleBorder" type="Node2D" parent="." unique_id=1753792020]
 
@@ -154,25 +164,61 @@ position = Vector2(80, 345)
 texture = ExtResource("4_gbc30")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=2095624483]
-position = Vector2(80, 365.5)
+position = Vector2(66.5, 354.5)
 shape = SubResource("RectangleShape2D_4hwee")
 
-[node name="Pets" type="Node2D" parent="." unique_id=1002314019]
+[node name="Area2D" type="Area2D" parent="StaticBody2D" unique_id=1477060596]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D/Area2D" unique_id=2089902103]
+position = Vector2(78, 342)
+shape = SubResource("RectangleShape2D_y52lp")
+debug_color = Color(0.9445519, 0.16801596, 0.42749128, 0.41960785)
+
+[node name="BunnyDetailed" type="Sprite2D" parent="StaticBody2D" unique_id=1254991407]
+position = Vector2(196, 365)
+scale = Vector2(0.06487233, 0.064872324)
+texture = ExtResource("5_3idvi")
+
+[node name="Bunny" type="AudioStreamPlayer2D" parent="StaticBody2D" unique_id=1367394162]
+stream = ExtResource("6_i6tvt")
+
+[node name="Pets" type="Node2D" parent="." unique_id=1002314019 node_paths=PackedStringArray("AreaSpawn", "SpawnTimer")]
 script = ExtResource("5_w8w5l")
-
-[node name="EvilCat" type="Node2D" parent="Pets" unique_id=2108153716]
-
-[node name="State1" type="Sprite2D" parent="Pets/EvilCat" unique_id=239502136]
-
-[node name="Bunny" type="Node2D" parent="Pets" unique_id=990626067]
-
-[node name="State1" type="Sprite2D" parent="Pets/Bunny" unique_id=1687034709]
+EvilCatScene = ExtResource("6_y7wyq")
+BunnyScene = ExtResource("7_3mf50")
+AreaSpawn = NodePath("AreaSpawn")
+SpawnTimer = NodePath("SpawnTimer")
 
 [node name="SpawnTimer" type="Timer" parent="Pets" unique_id=651059402]
-wait_time = 60.0
 autostart = true
 
 [node name="AreaSpawn" type="Area2D" parent="Pets" unique_id=655066337]
+
+[node name="SpawnArea" type="Node2D" parent="Pets/AreaSpawn" unique_id=654923324]
+
+[node name="Marker2D" type="Marker2D" parent="Pets/AreaSpawn/SpawnArea" unique_id=1920340955 groups=["spawn_markers"]]
+position = Vector2(730, 86)
+
+[node name="Marker2D2" type="Marker2D" parent="Pets/AreaSpawn/SpawnArea" unique_id=487513655 groups=["spawn_markers"]]
+position = Vector2(776, 87)
+
+[node name="Marker2D3" type="Marker2D" parent="Pets/AreaSpawn/SpawnArea" unique_id=1489229930 groups=["spawn_markers"]]
+position = Vector2(736, 154)
+
+[node name="Marker2D4" type="Marker2D" parent="Pets/AreaSpawn/SpawnArea" unique_id=776830996 groups=["spawn_markers"]]
+position = Vector2(937, 125)
+
+[node name="Marker2D5" type="Marker2D" parent="Pets/AreaSpawn/SpawnArea" unique_id=1427940552 groups=["spawn_markers"]]
+position = Vector2(853, 278)
+
+[node name="Marker2D6" type="Marker2D" parent="Pets/AreaSpawn/SpawnArea" unique_id=42349608 groups=["spawn_markers"]]
+position = Vector2(857, 111)
+
+[node name="Marker2D7" type="Marker2D" parent="Pets/AreaSpawn/SpawnArea" unique_id=341766303 groups=["spawn_markers"]]
+position = Vector2(758, 267)
+
+[node name="Marker2D8" type="Marker2D" parent="Pets/AreaSpawn/SpawnArea" unique_id=2131668810 groups=["spawn_markers"]]
+position = Vector2(944, 332)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Pets/AreaSpawn" unique_id=844680573]
 position = Vector2(845, 214.5)
@@ -187,10 +233,26 @@ y_sort_enabled = true
 position = Vector2(301, 292)
 shape = SubResource("CircleShape2D_3mf50")
 
-[node name="TigerTest" parent="Area2D2" unique_id=1814929934 instance=ExtResource("6_do3vt")]
-
-[node name="TargetMarker" type="Marker2D" parent="." unique_id=1432331973]
+[node name="TargetMarker" type="Marker2D" parent="." unique_id=1432331973 groups=["pet_spawn"]]
 position = Vector2(167, 217)
 gizmo_extents = 13.9
 
-[connection signal="body_entered" from="Area2D2" to="Area2D2" method="_on_body_entered"]
+[node name="Pen" type="Node2D" parent="." unique_id=959223368]
+
+[node name="Tiger" parent="Pen" unique_id=1878480984 instance=ExtResource("8_3mf50")]
+position = Vector2(167, 220)
+
+[node name="Bunny" parent="Pen" unique_id=1883707916 instance=ExtResource("9_4hwee")]
+position = Vector2(234, 222)
+
+[node name="Burds" type="AudioStreamPlayer2D" parent="." unique_id=1413363048]
+stream = ExtResource("10_jaca8")
+autoplay = true
+
+[node name="River" type="AudioStreamPlayer2D" parent="." unique_id=1625313851]
+stream = ExtResource("11_3idvi")
+autoplay = true
+
+[connection signal="body_entered" from="StaticBody2D/Area2D" to="Pets" method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="StaticBody2D/Area2D" to="Pets" method="_on_area_2d_body_exited"]
+[connection signal="timeout" from="Pets/SpawnTimer" to="Pets" method="_on_spawn_timer_timeout"]
