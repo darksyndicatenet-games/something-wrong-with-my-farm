@@ -16,6 +16,10 @@ run/main_scene="uid://b0620dm10isa1"
 config/features=PackedStringArray("4.6", "Forward Plus")
 config/icon="res://icon.svg"
 
+[autoload]
+
+Globals="*uid://buhjcln2d64pj"
+
 [display]
 
 window/size/viewport_width=640
@@ -45,6 +49,7 @@ folder_colors={
 spawn_markers=""
 placement=""
 pet_spawn=""
+player=""
 
 [input]
 
