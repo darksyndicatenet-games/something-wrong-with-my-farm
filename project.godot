@@ -34,6 +34,7 @@ project/assembly_name="something_wrong_with_my_farm"
 
 folder_colors={
 "res://Assets/": "blue",
+"res://Music/": "blue",
 "res://Scenes/": "orange",
 "res://Script/": "red"
 }

@@ -6,7 +6,6 @@ extends CharacterBody2D
 
 var feed_states = ["Feed1", "Feed2", "Feed3", "Failed"]
 var current_feed = 0
-@onready var level_up_sfx: AudioStreamPlayer2D = $LevelUpSFX
 
 
 func _ready() -> void:
@@ -22,15 +21,10 @@ func _on_area_2d_body_entered(body: Node2D) -> void:
 
 func _on_btn_feedme_pressed() -> void:
 	print("fed")
-	#if current_feed >= 0 and <= 4:
+
 	current_feed += 1
-		
+	
 	if current_feed >= feed_states.size():
 		current_feed = 0   # loops back to first animation
-	level_up_sfx.play()
+
 	tiger_sprite.play(feed_states[current_feed])
-
-
-func _on_area_2d_body_exited(body: Node2D) -> void:
-	if body.name == "Player":
-		choices.visible = false

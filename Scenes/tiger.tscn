@@ -1,12 +1,13 @@
 [gd_scene format=3 uid="uid://ut6dcu5t6tbx"]
 
 [ext_resource type="Script" uid="uid://b1ig8xf3ffgpy" path="res://Scenes/tiger.gd" id="1_8jiom"]
-[ext_resource type="Texture2D" uid="uid://cgwujbhb7fn0f" path="res://Assets/PlaceHolders/TigerPhaseOne/frame1.png" id="1_vhx4t"]
 [ext_resource type="Texture2D" uid="uid://csd5hmi2i6idh" path="res://Tiger/TigerPhaseTwo/grown_up_tiger1.png" id="3_7pfy0"]
 [ext_resource type="Texture2D" uid="uid://wdfhif6al801" path="res://Tiger/TigerPhaseFourFail/evil_cat1.png" id="3_g1jmt"]
+[ext_resource type="Texture2D" uid="uid://dyw6ou7rc6yq3" path="res://Bunny/Detailed.png" id="3_opkpa"]
 [ext_resource type="Texture2D" uid="uid://cgwujbhb7fn0f" path="res://Tiger/TigerPhaseOne/frame1.png" id="3_r4t8v"]
 [ext_resource type="Texture2D" uid="uid://rmhcf7l6somj" path="res://Tiger/TigerPhaseOne/frame2.png" id="4_7pfy0"]
 [ext_resource type="Texture2D" uid="uid://cmc4n0doer8rj" path="res://Tiger/TigerPhaseFourFail/evil_cat2.png" id="4_opkpa"]
+[ext_resource type="Texture2D" uid="uid://kjtans2or8nb" path="res://Tiger/TigerPhaseFourFail/Detailed.png" id="4_x0q14"]
 [ext_resource type="Texture2D" uid="uid://b8o66xlge61jy" path="res://Tiger/TigerPhaseTwo/grown_up_tiger2.png" id="4_yy0ae"]
 [ext_resource type="Texture2D" uid="uid://c5qyl3kqkh63d" path="res://Tiger/TigerPhaseTwo/grown_up_tiger3.png" id="5_3lxvk"]
 [ext_resource type="Texture2D" uid="uid://ckp3x6u0jaye6" path="res://Tiger/TigerPhaseFourFail/evil_cat3.png" id="5_x0q14"]
@@ -17,12 +18,21 @@
 [ext_resource type="Texture2D" uid="uid://c5tdl5aguyjpc" path="res://Tiger/TigerPhaseThree/ultimate1.png" id="15_r26s2"]
 [ext_resource type="Texture2D" uid="uid://clmxfvy1q4hiy" path="res://Tiger/TigerPhaseThree/ultimate2.png" id="16_y6ghg"]
 [ext_resource type="Texture2D" uid="uid://c6tus128f1jrn" path="res://Tiger/TigerPhaseThree/ultimate3.png" id="17_ubir4"]
+[ext_resource type="AudioStream" uid="uid://dom1yyjnk10es" path="res://Music/AnimalNoises/Tiger 1.mp3" id="18_g1jmt"]
 [ext_resource type="Texture2D" uid="uid://dvwg53h4f77w2" path="res://Tiger/TigerPhaseThree/ultimate4.png" id="18_i7ap6"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_8jiom"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vhx4t"]
 size = Vector2(64, 111)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_x0q14"]
+atlas = ExtResource("3_opkpa")
+region = Rect2(0, 0, 1449, 1449)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gh6ls"]
+atlas = ExtResource("4_x0q14")
+region = Rect2(0, 0, 1449, 1449)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_3ajpt"]
 atlas = ExtResource("3_g1jmt")
@@ -90,6 +100,17 @@ region = Rect2(0, 0, 32, 32)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_j6jau"]
 animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_x0q14")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gh6ls")
+}],
+"loop": true,
+"name": &"Detailed",
+"speed": 5.0
+}, {
 "frames": [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_3ajpt")
@@ -163,7 +184,8 @@ animations = [{
 script = ExtResource("1_8jiom")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1394779347]
-texture = ExtResource("1_vhx4t")
+visible = false
+texture = ExtResource("3_r4t8v")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=996104644]
 shape = SubResource("CircleShape2D_8jiom")
@@ -194,8 +216,12 @@ text = "Feed Me"
 
 [node name="Feed1" type="AnimatedSprite2D" parent="." unique_id=769403884]
 sprite_frames = SubResource("SpriteFrames_j6jau")
-animation = &"Failed"
+animation = &"Feed1"
 autoplay = "Feed1"
 
+[node name="LevelUpSFX" type="AudioStreamPlayer2D" parent="." unique_id=144762232]
+stream = ExtResource("18_g1jmt")
+
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]
 [connection signal="pressed" from="Choices/btnFeedme" to="." method="_on_btn_feedme_pressed"]

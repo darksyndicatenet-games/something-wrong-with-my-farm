@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://bbss6iin01k8r"
+path="res://.godot/imported/Fantasy Nature Birds.mp3-0841142acfbbfa46d69cab3ef9b3caa8.mp3str"
+
+[deps]
+
+source_file="res://Music/Fantasy Nature Birds.mp3"
+dest_files=["res://.godot/imported/Fantasy Nature Birds.mp3-0841142acfbbfa46d69cab3ef9b3caa8.mp3str"]
+
+[params]
+
+loop=true
+loop_offset=0.0
+bpm=0.0
+beat_count=0
+bar_beats=4

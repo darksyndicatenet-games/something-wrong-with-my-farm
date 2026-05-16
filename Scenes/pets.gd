@@ -6,13 +6,15 @@ extends Node2D
 @export var SpawnTimer: Timer
 
 var rng = RandomNumberGenerator.new()
+@onready var bunny: AudioStreamPlayer2D = $"../StaticBody2D/Bunny"
 
 #@onready var : Marker2D = $Fence
 @onready var fence: Marker2D = $"../TargetMarker"
 
-
+@onready var bunny_detailed: Sprite2D = $"../StaticBody2D/BunnyDetailed"
 func _ready():
 	SpawnTimer.timeout.connect(_on_spawn_timer_timeout)
+	bunny_detailed.visible = false
 	
 
 func _on_spawn_timer_timeout():
@@ -43,3 +45,16 @@ func spawn_pet(pet_scene: PackedScene, position: Vector2):
 	
 func _on_pet_spawned():
 	pass
+
+func _on_area_2d_body_entered(body: Node2D) -> void:
+	if body.name == "Player":
+		bunny_detailed.visible = true
+		bunny.play()
+		pass
+
+
+func _on_area_2d_body_exited(body: Node2D) -> void:
+	if body.name == "Player":
+		bunny_detailed.visible = false
+		bunny.stop()
+		pass
