@@ -1,6 +1,6 @@
 extends Area2D
 
-@export var animal_scene: PackedScene
+@export var animal_scenes: Array[PackedScene]
 @export var spawn_interval: float = 1.0
 @onready var area_spawn: Area2D = $"."
 
@@ -33,16 +33,14 @@ func get_random_point() -> Vector2:
 	
 	
 func spawn_animal():
-	if animal_scene == null:
-		print("No animal scene")
+	if animal_scenes.is_empty():
+		print("No animals assigned")
 		return
 	
-	var animal = animal_scene.instantiate()
-
+	var scene = animal_scenes[randi() % animal_scenes.size()]
+	var animal = scene.instantiate()
+	
 	get_tree().current_scene.add_child(animal)
-
+	
 	animal.global_position = get_random_point()
 	animal.z_index = 100
-
-	print("Spawned")
-	print(get_random_point())

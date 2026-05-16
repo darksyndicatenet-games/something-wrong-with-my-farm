@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://bsmpfov21iboy"]
+
+[ext_resource type="Script" uid="uid://dnj26gpiyhixg" path="res://NewScenes/tiger_scene.gd" id="1_bo51a"]
+[ext_resource type="Texture2D" uid="uid://cgwujbhb7fn0f" path="res://Tiger/TigerPhaseOne/frame1.png" id="1_elcse"]
+
+[node name="TigerScene" type="Node2D" unique_id=326543254]
+script = ExtResource("1_bo51a")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1705435129]
+texture = ExtResource("1_elcse")

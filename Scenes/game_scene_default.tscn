@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://brknv3aidc5ly" path="res://Scenes/player.tscn" id="3_q5s7l"]
 [ext_resource type="Texture2D" uid="uid://cekqr58xfp1yr" path="res://Assets/Mapping/House_1_Wood_Base_Blue.png" id="4_gbc30"]
 [ext_resource type="Texture2D" uid="uid://dyw6ou7rc6yq3" path="res://Bunny/Detailed.png" id="5_3idvi"]
+[ext_resource type="PackedScene" uid="uid://bsmpfov21iboy" path="res://NewScenes/tiger_scene.tscn" id="5_i6tvt"]
 [ext_resource type="AudioStream" uid="uid://ctkm2vbj5tm7w" path="res://Music/AnimalNoises/Evil Rabbit.mp3" id="6_i6tvt"]
 [ext_resource type="PackedScene" uid="uid://ut6dcu5t6tbx" path="res://Scenes/tiger.tscn" id="8_3mf50"]
 [ext_resource type="PackedScene" uid="uid://15p3bmio5pqb" path="res://Scenes/bunny.tscn" id="9_4hwee"]
@@ -90,7 +91,7 @@ tile_set = ExtResource("1_d2o1l")
 [node name="AreaSpawn" type="Area2D" parent="." unique_id=655066337]
 z_index = 1
 script = ExtResource("2_jaca8")
-animal_scene = ExtResource("3_3idvi")
+animal_scenes = Array[PackedScene]([ExtResource("3_3idvi"), ExtResource("5_i6tvt")])
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AreaSpawn" unique_id=1341369939]
 position = Vector2(867.00006, 281)
@@ -206,6 +207,7 @@ gizmo_extents = 13.9
 [node name="Pen" type="Node2D" parent="." unique_id=959223368]
 
 [node name="Tiger" parent="Pen" unique_id=1878480984 instance=ExtResource("8_3mf50")]
+visible = false
 position = Vector2(167, 220)
 
 [node name="Bunny" parent="Pen" unique_id=1883707916 instance=ExtResource("9_4hwee")]
@@ -218,3 +220,11 @@ autoplay = true
 [node name="River" type="AudioStreamPlayer2D" parent="." unique_id=1625313851]
 stream = ExtResource("11_3idvi")
 autoplay = true
+
+[node name="PenNew" type="Node2D" parent="." unique_id=1528172249]
+
+[node name="TargetBunny" type="Marker2D" parent="PenNew" unique_id=1768926941]
+position = Vector2(167, 232)
+
+[node name="TargetTiger" type="Marker2D" parent="PenNew" unique_id=307549508]
+position = Vector2(234, 231)
