@@ -1,25 +1,44 @@
 extends Marker2D
 
+var sprites = [
+	preload("res://Tiger/TigerPhaseTwo/grown_up_tiger1.png"),
+	preload("res://Tiger/TigerPhaseThree/ultimate1.png")
+]
+
+var index := 0
 
 @export var tiger_scene: PackedScene
-#@onready var : Marker2D = $Marker2D
-#@onready var spawn_points = $SpawnPoints.get_children()
 
-var is_spawn_tiger : bool = false
-@onready var target_tiger_point: Marker2D = $"."
+var is_spawn_tiger := false
+var tiger_instance = null
 
-#func _ready() -> void:
-	#await get_tree().process_frame
-	#spawn_animal()
+@onready var target_tiger_point: Marker2D = self
+
 
 func _physics_process(_delta: float) -> void:
-	if Globals.tiger_track >= 1 and is_spawn_tiger == false:
+
+	if Globals.tiger_track >= 1 and not is_spawn_tiger:
 		spawn_animal()
 		is_spawn_tiger = true
 		Globals.tiger_spawned = true
 
+	if Input.is_action_just_pressed("click") and Globals.wheet_wallet > 0 and Globals.tiger_phase < 3:
+		cycle_tiger_sprite()
+		Globals.wheet_wallet -= 1
+		Globals.tiger_phase += 1
+
+
 func spawn_animal():
-	var animal = tiger_scene.instantiate()
-	get_tree().current_scene.add_child(animal)
-	#var point = tiger_spawn_points[randi() % spawn_points.size()]
-	animal.global_position = target_tiger_point.global_position
+	tiger_instance = tiger_scene.instantiate()
+	get_tree().current_scene.add_child(tiger_instance)
+	tiger_instance.global_position = target_tiger_point.global_position
+
+
+func cycle_tiger_sprite():
+	if tiger_instance == null:
+		return
+
+	index = (index + 1) % sprites.size()
+
+	var sprite = tiger_instance.get_node("Sprite2D")
+	sprite.texture = sprites[index]
