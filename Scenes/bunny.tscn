@@ -173,6 +173,7 @@ animations = [{
 [sub_resource type="CircleShape2D" id="CircleShape2D_86gfu"]
 
 [node name="Bunny" type="CharacterBody2D" unique_id=1883707916]
+z_index = 1
 script = ExtResource("1_7qvlp")
 
 [node name="Area2D" type="Area2D" parent="." unique_id=329274456]
