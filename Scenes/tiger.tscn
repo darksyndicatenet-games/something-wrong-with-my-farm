@@ -199,11 +199,11 @@ shape = SubResource("RectangleShape2D_vhx4t")
 [node name="Choices" type="Node2D" parent="." unique_id=2110389125]
 
 [node name="btnLeave" type="Button" parent="Choices" unique_id=41046670]
-offset_left = -103.0
-offset_top = 69.0
-offset_right = -3.0
-offset_bottom = 105.0
-theme_override_font_sizes/font_size = 20
+offset_left = -91.5
+offset_top = 70.0
+offset_right = -37.5
+offset_bottom = 92.0
+theme_override_font_sizes/font_size = 10
 text = "Leave Me"
 
 [node name="btnFeedme" type="Button" parent="Choices" unique_id=376554305]

@@ -1,7 +1,7 @@
 [gd_scene format=4 uid="uid://b0620dm10isa1"]
 
-[ext_resource type="Script" uid="uid://pjr1iusbo7sr" path="res://Scenes/GameSceneDefault.cs" id="1_47pqx"]
 [ext_resource type="TileSet" uid="uid://hw7qy8isdhtg" path="res://Assets/TileMap/game_tile_set.tres" id="1_d2o1l"]
+[ext_resource type="Script" uid="uid://jcdfarwtfvlr" path="res://Scenes/game_scene_default.gd" id="1_i6tvt"]
 [ext_resource type="PackedScene" uid="uid://brknv3aidc5ly" path="res://Scenes/player.tscn" id="3_q5s7l"]
 [ext_resource type="Texture2D" uid="uid://cekqr58xfp1yr" path="res://Assets/Mapping/House_1_Wood_Base_Blue.png" id="4_gbc30"]
 [ext_resource type="Texture2D" uid="uid://dyw6ou7rc6yq3" path="res://Bunny/Detailed.png" id="5_3idvi"]
@@ -64,7 +64,7 @@ radius = 9.0
 
 [node name="GameSceneDefault" type="Node2D" unique_id=1126696108]
 y_sort_enabled = true
-script = ExtResource("1_47pqx")
+script = ExtResource("1_i6tvt")
 
 [node name="GameTileMap" type="Node2D" parent="." unique_id=2071851677]
 
