@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://dqlcnq3gsvbah"]
+
+[ext_resource type="Script" uid="uid://ctvcur8nn27y0" path="res://NewScenes/bunny_scene.gd" id="1_momgy"]
+[ext_resource type="Texture2D" uid="uid://dj8itp7h6soi1" path="res://Bunny/PhaseOne/bunny1.png" id="1_uvnu8"]
+
+[node name="BunnyScene" type="Node2D" unique_id=1355326536]
+script = ExtResource("1_momgy")
+
+[node name="Bunny" type="Sprite2D" parent="." unique_id=244168745]
+texture = ExtResource("1_uvnu8")
