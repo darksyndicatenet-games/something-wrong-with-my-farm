@@ -1,0 +1,77 @@
+[gd_scene format=3 uid="uid://bvg4hq2i2ppen"]
+
+[ext_resource type="Texture2D" uid="uid://bxeytssvcqavd" path="res://Assets/Mapping/Objects/Basic Plants.png" id="1_321si"]
+[ext_resource type="Script" uid="uid://dvlhqtxwuyx2d" path="res://NewScenes/wheet_spawner.gd" id="1_ir8m4"]
+[ext_resource type="PackedScene" uid="uid://jd1rd1sw4yp3" path="res://NewScenes/globals.tscn" id="2_mdkp4"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_mdkp4"]
+height = 20.0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ir8m4"]
+atlas = ExtResource("1_321si")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_m88k8"]
+atlas = ExtResource("1_321si")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wf8d7"]
+atlas = ExtResource("1_321si")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lmba0"]
+atlas = ExtResource("1_321si")
+region = Rect2(48, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5ycb4"]
+atlas = ExtResource("1_321si")
+region = Rect2(64, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8uwch"]
+atlas = ExtResource("1_321si")
+region = Rect2(80, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_hlhk6"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ir8m4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_m88k8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wf8d7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lmba0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5ycb4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8uwch")
+}],
+"loop": false,
+"name": &"Wheet",
+"speed": 1.0
+}]
+
+[node name="WheetSpawner" type="Area2D" unique_id=634088442]
+script = ExtResource("1_ir8m4")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=797050612]
+shape = SubResource("CapsuleShape2D_mdkp4")
+debug_color = Color(0.99375755, 0, 0.23971689, 0.41960785)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=498449414]
+sprite_frames = SubResource("SpriteFrames_hlhk6")
+animation = &"Wheet"
+autoplay = "Wheet"
+frame = 5
+frame_progress = 1.0
+
+[node name="Globals" parent="." unique_id=90096379 instance=ExtResource("2_mdkp4")]
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]

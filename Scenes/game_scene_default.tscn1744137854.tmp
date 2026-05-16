@@ -301,9 +301,13 @@ offset_right = 40.0
 offset_bottom = 40.0
 script = ExtResource("21_5btk1")
 
-[node name="Panel" type="CanvasLayer" parent="UI" unique_id=700713637]
+[node name="Panel" type="Panel" parent="UI" unique_id=663476915]
+layout_mode = 0
+offset_right = 120.0
+offset_bottom = 74.0
 
 [node name="WheatTracker" type="Label" parent="UI/Panel" unique_id=1749521396]
+layout_mode = 0
 offset_right = 40.0
 offset_bottom = 23.0
 theme_override_font_sizes/font_size = 12

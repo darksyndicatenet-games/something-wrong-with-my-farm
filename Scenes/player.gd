@@ -2,6 +2,7 @@ extends CharacterBody2D
 
 @export var speed = 100
 
+
 var rotation_direction = 0
 
 func _physics_process(_delta):
@@ -11,3 +12,11 @@ func get_input():
 	var input_direction = Input.get_vector("left", "right", "up", "down")
 	velocity = input_direction * speed
 	move_and_slide()
+
+func harvest_crop(crop):
+	if crop.grown == false:
+		return
+
+	Globals.wheet_wallet += 1
+	print("Wheat: ", Globals.wheet_wallet)
+	crop.reset_crop()
